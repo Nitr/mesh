@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars_files:
+    - external_vars.yml
+
+  tasks:
+    - include: tasks/base.yml
+    - include: tasks/dotfiles.yml
+    - include: tasks/vim.yml
+    - include: tasks/docker.yml
+    - include: tasks/install_app.yml

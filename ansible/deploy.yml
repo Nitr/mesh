@@ -1,0 +1,8 @@
+---
+- hosts: all
+  vars_files:
+    - external_vars.yml
+
+  tasks:
+    - name: Update code
+      git: accept_hostkey=yes repo={{ git_repo }} dest=/projects/{{ app_name }} update=no version={{ git_branch }}

@@ -1,0 +1,16 @@
+---
+
+- name: create .bash_profile
+  file: path=~/.bash_profile state=touch
+
+- name: Add 'export LC_ALL=en_US.utf-8' to .bash_profile
+  lineinfile: dest="~/.bash_profile"
+    line="export LC_ALL=en_US.utf-8"
+
+- name: Add 'export LANG=$LC_ALL' to .bash_profile
+  lineinfile: dest="~/.bash_profile"
+    line='export LANG="$LC_ALL"'
+
+- name: Add 'export PS1="$(__git_ps1) \W\$"' to .bash_profile
+  lineinfile: dest="~/.bash_profile"
+    line="export PS1='$(__git_ps1) \W\$ '"

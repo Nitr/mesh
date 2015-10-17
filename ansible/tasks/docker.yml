@@ -1,0 +1,12 @@
+---
+
+- name: Install Docker
+  shell: curl -sSL https://get.docker.com/ | sh
+
+- name: Install PIP
+  apt: name=python-pip state=latest
+  become: yes
+
+- name: Install Docker-compose
+  pip: name=docker-compose
+  become: yes

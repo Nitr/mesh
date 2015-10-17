@@ -1,0 +1,17 @@
+---
+
+- name: Install Vim
+  apt: name=vim state=latest update_cache=yes
+  become: yes
+
+- name: Copy vimrc to home direcotry
+  copy: src={{ curdir }}/files/vimrc  dest=~/.vimrc owner={{ user }} group={{ group }} force=yes
+
+- name: Install Vundle to VIM
+  git:
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    dest: ~/.vim/bundle/Vundle.vim
+
+- name: Install VIM plugins
+  #shell: vim -i NONE -c PluginInstall -c quitall
+  debug: msg="run localy 'vim -i NONE -c PluginInstall -c quitall' to install vim plugins"

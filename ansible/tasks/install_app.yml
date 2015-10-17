@@ -1,0 +1,11 @@
+---
+
+- name: Create folder /projects
+  file: path=/projects owner=ubuntu group=ubuntu state=directory mode=0755
+  become: yes
+
+- name: Fetch repo {{ git_repo }} to folder /projects/{{ app_name }}
+  git: repo={{ git_repo }} dest=/projects/{{ app_name }} clone=yes update=yes version={{ git_branch }} accept_hostkey=yes
+
+- name: Start Up
+  shell: "cd /projects/{{ app_name }}/docker && sudo docker-compose up -d"

@@ -1,0 +1,7 @@
+---
+
+user: ubuntu
+group: ubuntu
+git_repo: git@github.com:Nitr/mesh.git
+git_branch: master
+app_name: mesh
