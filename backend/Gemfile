@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'liquid'
-gem 'mongoid', '~> 5.0.0'
-gem 'mongoid-slug'
+gem 'sequel'
+gem 'pg'
 gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger', git: 'https://github.com/tim-vandecasteele/grape-swagger'
 gem 'kramdown'
 gem 'rack-cors'
 gem 'racksh'
+gem 'mail'
 
 group :development, :test do
   gem 'shotgun'

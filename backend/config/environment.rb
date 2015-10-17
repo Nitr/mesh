@@ -7,9 +7,10 @@ require 'bundler/setup'
 
 Bundler.require :default, env
 
-Mongoid.load!( File.join(File.dirname(__FILE__), "mongoid.#{env}.yml"), env.to_sym)
+DB = Sequel.connect('postgres://postgres@postgres/mesh')
+DB.extension :pg_array, :pg_json
 
 require 'models/environment'
-require 'models/mail_settings'
-require 'models/param'
 require 'models/template'
+require 'entities'
+require 'api'

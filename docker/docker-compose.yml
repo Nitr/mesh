@@ -13,10 +13,10 @@ mesh:
     - gems
   links:
    - redis
-   - mongo
+   - postgres
 redis:
   image: zarkzork/redis
-mongo:
-  image: mongo
+postgres:
+  image: postgres
 gems:
   image: zarkzork/gems

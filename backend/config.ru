@@ -6,17 +6,13 @@ require 'config/environment'
 #use Rack::Static, :urls => ['/swagger_ui'], index: 'index.html'
 #use Rack::CommonLogger, Logger.new($stdout)
 
-#require 'rack/cors'
-#use Rack::Cors do
-#  allow do
-#    origins '*'
-#    resource '*', headers: :any, methods: [ :get, :post, :put, :delete, :options ]
-#  end
-#end
-
-
-app = proc do |env|
-  [ 200, {'Content-Type' => 'text/plain'}, ["a"] ]
+require 'rack/cors'
+use Rack::Cors do
+  allow do
+    origins '*'
+    resource '*', headers: :any, methods: [ :get, :post, :put, :delete, :options ]
+  end
 end
 
-run app
+
+run API
