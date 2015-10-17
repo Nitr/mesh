@@ -1,0 +1,28 @@
+source 'https://rubygems.org'
+
+gem 'liquid'
+gem 'mongoid', '~> 5.0.0'
+gem 'mongoid-slug'
+gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger', git: 'https://github.com/tim-vandecasteele/grape-swagger'
+gem 'kramdown'
+gem 'rack-cors'
+gem 'racksh'
+
+group :development, :test do
+  gem 'shotgun'
+  gem 'rack-test'
+  gem 'factory_girl'
+  gem 'rspec'
+
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
+end
+
+group :test do
+  gem 'database_cleaner'
+end
+
